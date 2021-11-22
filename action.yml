@@ -1,0 +1,30 @@
+name: 'Split Repo'
+description: 'Split monorepo packages to multi repos'
+author: "Solat Yolo <solat.yolo@gmail.com>"
+
+branding:
+    icon: 'cloud'
+    color: 'purple'
+
+inputs:
+    pkg_name:
+        description: 'Local package directory'
+        required: true
+    repo_host:
+        description: 'Host'
+        default: 'github.com'
+        required: false
+    repo_org:
+        description: 'Remote organization'
+        required: true
+    branch:
+        description: 'Git branch'
+        default: 'main'
+        required: true
+    tag:
+        description: '[Optional] Tag to be released'
+        required: false
+
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
